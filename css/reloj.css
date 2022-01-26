@@ -1,0 +1,47 @@
+#container-clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#reloj {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--second-color);
+  color: var(--main-color);
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+#reloj h2 {
+  font-size: 3rem;
+  margin: 2rem 0 1rem 0;
+}
+
+#reloj div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8px 0 8px;
+}
+
+#reloj div p {
+  margin: 0;
+}
+
+#carcasa {
+  width: 50%;
+  align-self: center;
+  background-color: rgb(252, 29, 29);
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+}
+
+@media (max-width: 500px) {
+  #carcasa {
+    width: 100%;
+  }
+
+  #reloj h2 {
+    font-size: 2rem;
+  }
+}
