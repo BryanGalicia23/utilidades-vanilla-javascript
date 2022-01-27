@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css">
   <link rel="stylesheet" href="./css/hamburguesa.css" />
   <link rel="stylesheet" href="./css/reloj.css" />
+  <link rel="stylesheet" href="./css/bricks.css" />
 </head>
 
 <body>
@@ -26,7 +27,7 @@
   <aside class="panel">
     <nav class="menu">
       <a href="#seccion1">Reloj Digital y Alarma Sonora</a>
-      <a href="#seccion2">Sección 2</a>
+      <a href="#seccion2">Bricks Demolition</a>
       <a href="#seccion3">Sección 3</a>
       <a href="#seccion4">Sección 4</a>
       <a href="#seccion5">Sección 5</a>
@@ -40,22 +41,24 @@
         <div id="carcasa">
           <div id="reloj">
             <div>
-              <p>11/01/22</p>
-              <p>No alarm ⏰</p>
+              <p id="date">📅 dd/mm/aaaa</p>
+              <p id="isSound">No alarm ⏰</p>
             </div>
             <h2 id="hour">Digital Clock</h1>
           </div>
+          <div id="panel-clock">
+            <button id="activar-reloj">⏱</button>
+            <button id="desactivar-reloj">❌</button>
+            <button id="activar-alarma">⏰</button>
+            <button id="desactivar-alarma">💤</button>
+          </div>
         </div>
-      </div>
-      <div>
-        <button id="activar-reloj">Iniciar Reloj</button>
-        <button id="desactivar-reloj">Detener Reloj</button>
-        <button id="activar-alarma">Iniciar Alarma</button>
-        <button id="desactivar-alarma">Detener Alarma</button>
       </div>
     </section>
     <section id="seccion2" class="section">
-      <h2>Sección2</h2>
+      <h2>Bricks Demolition</h2>
+      <canvas id="myCanvas" width="310" height="300"></canvas>
+      <button id="button-start">Start Game</button>
     </section>
     <section id="seccion3" class="section">
       <h2>Sección3</h2>
@@ -69,6 +72,7 @@
   </main>
 
   <script src="index.js" type="module"></script>
+  <script src="./dom/bricks.js"></script>
 </body>
 
 </html>

@@ -31,12 +31,33 @@
 #carcasa {
   width: 50%;
   align-self: center;
-  background-color: rgb(252, 29, 29);
+  background-color: rgb(71, 69, 69);
   padding: 0.8rem;
   border-radius: 0.8rem;
 }
 
-@media (max-width: 500px) {
+#panel-clock {
+  display: flex;
+  margin-top: 0.5rem;
+  justify-content: space-evenly;
+}
+
+#panel-clock button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--second-color);
+  padding: 14px;
+}
+
+#panel-clock button:active {
+  background-color: yellowgreen;
+}
+
+@media (max-width: 600px) {
   #carcasa {
     width: 100%;
   }
