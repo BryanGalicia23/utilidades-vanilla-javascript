@@ -29,33 +29,34 @@ export function digitalClock(dateLocal, clock, btnPlay, btnStop) {
 
 export function alarm(sound, btnPlay, btnStop, isSound) {
   let alarmTempo;
+  let isSongFinish;
   const $alarm = d.createElement("audio");
   $alarm.src = sound;
+  $alarm.onended = function () {
+    d.querySelector(btnStop).disabled = true; // Botón Stop Deshabilitado
+    d.querySelector(btnPlay).disabled = false; // Botón Play Habilitado
+  };
 
-  d.querySelector(btnStop).disabled = true;
+  d.querySelector(btnStop).disabled = true; // Botón Stop Deshabilitado desde el inicio
 
   d.addEventListener("click", (e) => {
     if (e.target.matches(btnPlay)) {
-      e.target.disabled = true;
-      d.querySelector(btnStop).disabled = false;
+      e.target.disabled = true; // Deshabilitamos el botón play
+      d.querySelector(btnStop).disabled = false; // Habilitamos el botón Stop
 
       alarmTempo = setTimeout(() => {
         $alarm.play();
         d.querySelector(isSound).textContent = "Alarm Active ⏰";
       }, 2000);
-
-      setTimeout(() => {
-        d.querySelector(btnPlay).disabled = false;
-        d.querySelector(btnStop).disabled = true;
-      }, 20000);
     }
 
     if (e.target.matches(btnStop)) {
       clearTimeout(alarmTempo);
+      clearTimeout(isSongFinish);
       $alarm.pause();
       $alarm.currentTime = 0;
-      e.target.disabled = true;
-      d.querySelector(btnPlay).disabled = false;
+      e.target.disabled = true; // Deshabilito el botón stop
+      d.querySelector(btnPlay).disabled = false; // Vuelvo a habilitar el botón play
       d.querySelector(isSound).textContent = "No alarm ⏰";
     }
   });

@@ -4,11 +4,15 @@
   margin: 0 auto;
 }
 
-#button-start {
+#panel-bricks button {
   margin-top: 1rem;
   padding: 0.5rem;
   font-weight: bold;
   border-radius: 8%;
   background-color: #f7df1e;
   color: #222;
+}
+
+#panel-bricks button:disabled {
+  background-color: var(--second-modal-color);
 }

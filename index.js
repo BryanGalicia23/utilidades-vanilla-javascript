@@ -7,7 +7,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   hamburgerMenu(".panel-btn", ".panel", ".menu a");
   digitalClock("#date", "#hour", "#activar-reloj", "#desactivar-reloj");
   alarm(
-    "http://commondatastorage.googleapis.com/codeskulptor-demos/pyman_assets/ateapill.ogg",
+    "./assets/WithoutMeEminem.mp3",
     "#activar-alarma",
     "#desactivar-alarma",
     "#isSound"

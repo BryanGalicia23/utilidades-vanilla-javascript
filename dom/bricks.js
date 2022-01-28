@@ -1,5 +1,7 @@
 const canvas = document.getElementById("myCanvas");
 const buttonStart = document.getElementById("button-start");
+const buttonStop = document.getElementById("button-stop");
+const buttonSpeed = document.getElementById("button-speed");
 const context = canvas.getContext("2d");
 
 var x = canvas.width / 2;
@@ -27,6 +29,7 @@ var brickPadding = 5;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 20;
 var bricks = [];
+var gameBricks;
 
 for (c = 0; c < brickColumnCount; c++) {
   bricks[c] = [];
@@ -35,15 +38,38 @@ for (c = 0; c < brickColumnCount; c++) {
   }
 }
 
+buttonStop.disabled = true;
+buttonSpeed.disabled = true;
+
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 document.addEventListener("touchmove", touchMoveHandler, false);
 buttonStart.addEventListener("click", startGame, false);
+buttonStop.addEventListener("click", stopGame, false);
+buttonSpeed.addEventListener("click", speedGame, false);
 
 function startGame(e) {
   e.preventDefault();
-  draw();
+  //draw();
+  buttonStart.disabled = true;
+  buttonStop.disabled = false;
+  buttonSpeed.disabled = false;
+  gameBricks = setInterval(draw, 10);
+}
+
+function stopGame(e) {
+  e.preventDefault();
+  clearInterval(gameBricks);
+  buttonStart.disabled = false;
+  buttonSpeed.disabled = true;
+  buttonStop.disabled = true;
+}
+
+function speedGame(e) {
+  e.preventDefault();
+  dx > 0 ? (dx += 2) : (dx -= 2);
+  dy < 0 ? (dy -= 2) : (dy += 2);
 }
 
 function touchMoveHandler(e) {
@@ -139,7 +165,7 @@ function draw() {
     } else {
       lives--;
       if (!lives) {
-        alert("GAME OVER!");
+        alert("😭 GAME OVER! 😭");
         document.location.reload();
       } else {
         x = canvas.width / 2;
@@ -160,7 +186,7 @@ function draw() {
 
   x += dx;
   y += dy;
-  requestAnimationFrame(draw);
+  //requestAnimationFrame(draw);
 }
 
 function collisionDetection() {
@@ -178,7 +204,7 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if (score == brickRowCount * brickColumnCount) {
-            alert("YOU WIN, CONGRATULATIONS!!!");
+            alert("🥳 YOU WIN! 🥳");
             document.location.reload();
           }
         } // End if
