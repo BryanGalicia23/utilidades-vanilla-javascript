@@ -34,18 +34,22 @@ dibujarTeclado(myColor, cx - 1, cy, cx + 1, cy);
 function moveWithKey(e) {
   switch (e.keyCode) {
     case teclas.LEFT:
+      e.preventDefault();
       dibujarTeclado(myColor, cx, cy, cx - movimiento, cy);
       cx -= movimiento;
       break;
     case teclas.UP:
+      e.preventDefault();
       dibujarTeclado(myColor, cx, cy, cx, cy - movimiento);
       cy -= movimiento;
       break;
     case teclas.RIGHT:
+      e.preventDefault();
       dibujarTeclado(myColor, cx, cy, cx + movimiento, cy);
       cx += movimiento;
       break;
     case teclas.DOWN:
+      e.preventDefault();
       dibujarTeclado(myColor, cx, cy, cx, cy + movimiento);
       cy += movimiento;
       break;
@@ -96,6 +100,7 @@ function cambiarColor() {
 function dibujarTouch(e) {
   //console.log(e);
   if (isTouch) {
+    e.preventDefault();
     dibujarTeclado(
       myColor,
       cx,
