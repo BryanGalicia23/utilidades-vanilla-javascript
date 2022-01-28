@@ -21,6 +21,7 @@ export function digitalClock(dateLocal, clock, btnPlay, btnStop) {
     if (e.target.matches(btnStop)) {
       clearInterval(clockTempo);
       d.querySelector(clock).textContent = "Digital Clock";
+      d.querySelector(dateLocal).textContent = `📅 dd/mm/aaaa`;
       d.querySelector(btnPlay).disabled = false;
       d.querySelector(btnStop).disabled = true;
     }
@@ -35,6 +36,7 @@ export function alarm(sound, btnPlay, btnStop, isSound) {
   $alarm.onended = function () {
     d.querySelector(btnStop).disabled = true; // Botón Stop Deshabilitado
     d.querySelector(btnPlay).disabled = false; // Botón Play Habilitado
+    d.querySelector(isSound).textContent = "No alarm ⏰";
   };
 
   d.querySelector(btnStop).disabled = true; // Botón Stop Deshabilitado desde el inicio
