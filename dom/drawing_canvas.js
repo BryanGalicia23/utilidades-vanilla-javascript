@@ -21,33 +21,33 @@ const teclas = {
   RIGHT: 39,
   DOWN: 40,
 };
-let x = 150;
-let y = 150;
+let cx = 150;
+let cy = 150;
 let myColor = colorcito.value;
 let movimiento = 4;
 let grosor = anchura.value;
 let isClick = false;
 let isTouch = false;
 
-dibujarTeclado(myColor, x - 1, y, x + 1, y);
+dibujarTeclado(myColor, cx - 1, cy, cx + 1, cy);
 
 function moveWithKey(e) {
   switch (e.keyCode) {
     case teclas.LEFT:
-      dibujarTeclado(myColor, x, y, x - movimiento, y);
-      x -= movimiento;
+      dibujarTeclado(myColor, cx, cy, cx - movimiento, cy);
+      cx -= movimiento;
       break;
     case teclas.UP:
-      dibujarTeclado(myColor, x, y, x, y - movimiento);
-      y -= movimiento;
+      dibujarTeclado(myColor, cx, cy, cx, cy - movimiento);
+      cy -= movimiento;
       break;
     case teclas.RIGHT:
-      dibujarTeclado(myColor, x, y, x + movimiento, y);
-      x += movimiento;
+      dibujarTeclado(myColor, cx, cy, cx + movimiento, cy);
+      cx += movimiento;
       break;
     case teclas.DOWN:
-      dibujarTeclado(myColor, x, y, x, y + movimiento);
-      y += movimiento;
+      dibujarTeclado(myColor, cx, cy, cx, cy + movimiento);
+      cy += movimiento;
       break;
 
     default:
@@ -67,22 +67,22 @@ function dibujarTeclado(color, x_ini, y_ini, x_fin, y_fin) {
 
 function dibujarMouse(e) {
   if (isClick) {
-    dibujarTeclado(myColor, x, y, e.layerX, e.layerY);
-    x = e.layerX;
-    y = e.layerY;
+    dibujarTeclado(myColor, cx, cy, e.layerX, e.layerY);
+    cx = e.layerX;
+    cy = e.layerY;
   }
 }
 
 function presionarMouse(e) {
   isClick = true;
-  x = e.layerX;
-  y = e.layerY;
+  cx = e.layerX;
+  cy = e.layerY;
 }
 
 function soltarMouse(e) {
   isClick = false;
-  x = e.layerX;
-  y = e.layerY;
+  cx = e.layerX;
+  cy = e.layerY;
 }
 
 function cambiarGrosor(e) {
@@ -98,24 +98,24 @@ function dibujarTouch(e) {
   if (isTouch) {
     dibujarTeclado(
       myColor,
-      x,
-      y,
+      cx,
+      cy,
       e.changedTouches[0].clientX,
       e.changedTouches[0].clientY
     );
-    x = e.changedTouches[0].clientX;
-    y = e.changedTouches[0].clientY;
+    cx = e.changedTouches[0].clientX;
+    cy = e.changedTouches[0].clientY;
   }
 }
 
 function presionarTouch(e) {
   isTouch = true;
-  x = e.changedTouches[0].clientX;
-  y = e.changedTouches[0].clientY;
+  cx = e.changedTouches[0].clientX;
+  cy = e.changedTouches[0].clientY;
 }
 
 function soltarTouch(e) {
   isTouch = false;
-  x = e.changedTouches[0].clientX;
-  y = e.changedTouches[0].clientY;
+  cx = e.changedTouches[0].clientX;
+  cy = e.changedTouches[0].clientY;
 }
