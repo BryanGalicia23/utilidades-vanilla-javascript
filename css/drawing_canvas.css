@@ -1,3 +1,51 @@
 #mi-lienzo {
-  border: 4px double black;
+  border: 4px double var(--second-color);
+  border-radius: 8px;
+}
+
+#panel-principal {
+  display: flex;
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#panel-colores {
+  display: flex;
+  flex-flow: row wrap;
+  width: 200px;
+  gap: 8px;
+}
+
+#panel-colores div {
+  width: 2rem;
+  height: 2rem;
+  border: 2px dashed black;
+  cursor: pointer;
+}
+
+#weight-picker {
+  display: inline-block;
+  width: 20px;
+  height: 70px;
+  padding: 0;
+  font-weight: bold;
+}
+
+#weight-picker input {
+  width: 60px;
+  height: 20px;
+  margin: 0;
+  transform-origin: 35px 25px;
+  transform: rotate(-90deg);
+}
+
+#buttons-canvas button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 8%;
+  background-color: #f7df1e;
+  color: #222;
 }

@@ -73,6 +73,7 @@ function speedGame(e) {
 }
 
 function touchMoveHandler(e) {
+  //e.preventDefault();
   var relativeTouchX = e.changedTouches[0].clientX - canvas.offsetLeft;
   if (relativeTouchX > 0 && relativeTouchX < canvas.width - paddleWidth / 2) {
     paddleX = relativeTouchX - paddleWidth / 2;

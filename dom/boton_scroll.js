@@ -18,7 +18,7 @@ export default function scrollTopButton(btn) {
     if (e.target.matches(btn)) {
       w.scroll({
         behavior: "smooth",
-        top: 0,
+        top: 50,
       });
     }
   });

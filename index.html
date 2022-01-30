@@ -74,27 +74,34 @@
       <h2>Drawing on Canvas</h2>
       <canvas width="310" height="300" id="mi-lienzo"></canvas>
       <br>
-      <label>Selecciona el grosor del pincel </label>
-      <select id="select-width">
-        <option value=1>1px</option>
-        <option value=3>3px</option>
-        <option value=5>5px</option>
-        <option value=7>7px</option>
-        <option value=9>9px</option>
-      </select>
-
-      <select id="select-color">
-        <option value="black">Negro</option>
-        <option value="blue">Azul</option>
-        <option value="red">Rojo</option>
-        <option value="yellow">Amarillo</option>
-        <option value="pink">Rosa</option>
-        <option value="green">Verde</option>
-        <option value="gray">Gris</option>
-        <option value="brown">Café</option>
-        <option value="purple">Morado</option>
-        <option value="white">Blanco</option>
-      </select>
+      <div id="panel-principal">
+        <div id="panel-colores">
+          <div id="w-red" class="colors-drawing" style="background-color: red;"></div>
+          <div id="w-green" class="colors-drawing" style="background-color: green;"></div>
+          <div id="w-blue" class="colors-drawing" style="background-color: blue;"></div>
+          <div id="w-yellow" class="colors-drawing" style="background-color: yellow;"></div>
+          <div id="w-orange" class="colors-drawing" style="background-color: orange;"></div>
+          <div id="w-pink" class="colors-drawing" style="background-color: pink;"></div>
+          <div id="w-purple" class="colors-drawing" style="background-color: purple;"></div>
+          <div id="w-brown" class="colors-drawing" style="background-color: brown;"></div>
+          <div id="w-aqua" class="colors-drawing" style="background-color: aqua;"></div>
+          <div id="w-springgreen" class="colors-drawing" style="background-color:springgreen;"></div>
+          <div id="w-black" class="colors-drawing" style="background-color: black;"></div>
+          <div id="w-white" class="colors-drawing" style="background-color: white;"></div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; font-weight: bold;">
+          <label for="color-picker">More colors</label>
+          <input type="color" name="Color" id="color-picker" />
+        </div>
+        <div id="weight-picker">
+          <label for="weightPincel">10px</label>
+          <input type="range" name="weight" id="weightPincel" min="2" max="10" value="2" step="0.5" />
+        </div>
+      </div>
+      <div id="buttons-canvas">
+        <button id="clean-canvas">Clean Drawing</button>
+        <button id="save-canvas">Save My Drawing</button>
+      </div>
     </section>
 
 
