@@ -1,5 +1,5 @@
 #mi-lienzo {
-  border: 4px double var(--second-color);
+  border: 4px double var(--main-color);
   border-radius: 8px;
 }
 

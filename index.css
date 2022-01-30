@@ -55,3 +55,8 @@ header h1 {
   min-height: 100vh;
   text-align: center;
 }
+
+.dark-mode {
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
